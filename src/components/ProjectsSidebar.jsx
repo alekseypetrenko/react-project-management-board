@@ -1,10 +1,15 @@
 import Button from "./Button";
 
-export default function ProjectsSidebar({ onStartAddProject, projects }) {
+export default function ProjectsSidebar({
+  onStartAddProject,
+  projects,
+  onSelectProject,
+}) {
   const content = projects.map((project) => {
     return (
       <li key={project.id}>
         <button
+          onClick={() => onSelectProject(project.id)}
           className="w-full text-left px-2 py-1 rounded-sm my-1 
         text-stone-400 hover:text-stone-200 hover:bg-stone-800"
         >
